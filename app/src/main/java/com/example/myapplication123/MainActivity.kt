@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,6 +23,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -30,6 +32,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
@@ -62,25 +65,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App() {
-    Column {
-        var count by remember { mutableIntStateOf(1) }
-
-        Button(onClick = {
-            count += 1
-        }) {
-            Text(stringResource(R.string.increment))
+    MyApplication123Theme {
+        Scaffold { contentPadding ->
+            var state by remember { mutableStateOf(false) }
+            Column(Modifier.padding(contentPadding)) {
+                Button(onClick = { state = !state }) {
+                    Text("Переключить")
+                }
+                Text("Состояние: $state")
+            }
         }
-        Button(onClick = {
-            count -= 1
-        }) {
-            Text(stringResource(R.string.decrement))
-        }
-
-        Text(pluralStringResource(R.plurals.things, count, count))
     }
 }
-
-
 
 @Preview(showBackground = true)
 @Composable
