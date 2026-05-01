@@ -1,12 +1,18 @@
 <resources>
-    <string name="app_name">My Application123</string>
-    <plurals name="things">
-        <item quantity="one">%1$d штука</item>
-        <item quantity="few">%1$d штуки</item>
-        <item quantity="other">%1$d штук</item>
-    </plurals>
-    <string name="increment">Увеличить</string>
-    <string name="decrement">Уменьшить</string>
-    <string name="dropdownmenu_launch">Запуск</string>
-    <string name="dropdownmenu_settings">Настройки</string>
+    <string name="app_name">MyApplication123</string>
+
+    <string name="home_screen_topbar_title">Домашний экран</string>
+    <string name="second_screen_topbar_title">Второй экран</string>
+    <string name="about_screen_topbar_title">О программе</string>
+
+    <string name="home_screen_go_to_second_screen_text_field_label">
+        Параметр второго экрана
+    </string>
+    <string name="home_screen_go_to_second_screen_button">
+        Перейти на второй экран
+    </string>
+
+    <string name="about_screen_text">
+        Создано потому что.
+    </string>
 </resources>
